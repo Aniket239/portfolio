@@ -1,4 +1,4 @@
-/* Example styles */
+/*===================================================================== General styles ===================================================================================*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 body,
@@ -16,7 +16,7 @@ footer {
   padding: 1.5em;
 }
 
-/*navbar or header*/
+/*============================================================================ navbar or header ========================================================================*/
 
 .desktop-nav{
   margin: 0 0 0 30em;
@@ -174,7 +174,7 @@ ul,a{
   left: 2%;
   top: 3%;
 }
-
+/*============================================================================== for mobile - navbar ======================================================================*/
 @media (max-width: 768px) {
   .logo {
     background-image: url('https://replicate.delivery/pbxt/ctN5mCkpMPbvLBLujEnBWG4XjHeE2fX5GqJmIv7egV9YKG1jA/output.png');
@@ -237,19 +237,34 @@ ul,a{
   }
 }
 
-/*about me*/
+/*===================================================================================== about me =======================================================================*/
+/* Typing effect keyframes */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: white; }
+}
+
+/* Applying the typing effect to an element */
+.typing-effect {
+  border-right: 2px solid white; /* Simulates the cursor */
+  white-space: nowrap; /* Keeps the text in a single line */
+  overflow: hidden; /* Ensures the text doesn't overflow */
+  animation: typing 6s steps(60, end), blink-caret 0.75s step-end infinite;
+}
+
+/* Additional styles for your About Me section */
 .about-me-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 50px;
   background-color: #000;
-  /* Or any other dark color you prefer */
   color: #fff;
-}
-
-.about-me-content {
-  max-width: 600px;
 }
 
 .about-me-content h1 {
@@ -280,12 +295,10 @@ ul,a{
 }
 
 .about-me-image {
-  background-image: url('https://replicate.delivery/pbxt/XKlwLGgv0bqUGRFc0llyL0doySO62xHvFizoQMZeaPaBMT9IA/output.png');
-  background-size: cover;
-  background-position: center;
+  margin: 0;
+  /* Add your image styling here */
 }
-
-/*footer*/
+/*============================================================================= footer ===============================================================================*/
 
 main,
 footer {
