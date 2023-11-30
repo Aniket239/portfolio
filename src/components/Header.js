@@ -20,27 +20,27 @@ function Header() {
       <nav className="desktop-nav">
         <ul>
           <li>
-            <a class="fancy" href="https://google.com">
-              <span class="top-key"></span>
-              <span class="text">About</span>
-              <span class="bottom-key-1"></span>
-              <span class="bottom-key-2"></span>
+            <a className="fancy" href="https://google.com">
+              <span className="top-key"></span>
+              <span className="text">About</span>
+              <span className="bottom-key-1"></span>
+              <span className="bottom-key-2"></span>
             </a>
           </li>
           <li>
-            <a class="fancy" href="https://google.com">
-              <span class="top-key"></span>
-              <span class="text">Projects</span>
-              <span class="bottom-key-1"></span>
-              <span class="bottom-key-2"></span>
+            <a className="fancy" href="https://google.com">
+              <span className="top-key"></span>
+              <span className="text">Projects</span>
+              <span className="bottom-key-1"></span>
+              <span className="bottom-key-2"></span>
             </a>
           </li>
           <li>
-            <a class="fancy" href="https://google.com">
-              <span class="top-key"></span>
-              <span class="text">Contact</span>
-              <span class="bottom-key-1"></span>
-              <span class="bottom-key-2"></span>
+            <a className="fancy" href="https://google.com">
+              <span className="top-key"></span>
+              <span className="text">Contact</span>
+              <span className="bottom-key-1"></span>
+              <span className="bottom-key-2"></span>
             </a>
           </li>
         </ul>
