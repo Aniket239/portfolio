@@ -307,7 +307,6 @@ a {
 .about-me-content h1 {
   font-size: 2.5rem;
   margin: 0 1rem 1rem 0;
-
 }
 
 .about-me-content .highlight {
@@ -345,6 +344,37 @@ a {
 
 
 @media (max-width: 768px) {
+  
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 177px;
+  }
+}
+
+@keyframes blink-caret {
+
+  0%,
+  100% {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: white;
+  }
+}
+
+.typing-effect {
+  color: #FED941;
+  border-right: 2px solid white;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 1.5s steps(20, end) forwards, blink-caret 1s step-end infinite;
+  animation-delay: 0s, 1.5s;
+}
   .about-me-content h1 {
     font-size: 1.5rem;
     margin: 0 rem 1rem 0;
