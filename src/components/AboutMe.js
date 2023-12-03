@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 function AboutMe() {
   const [typedText, setTypedText] = useState('');
-  const [index, setIndex] = useState(0); // Keep track of which word we're typing
+  const [index, setIndex] = useState(0);
+  // eslint-disable-next-line
   const fullText = ['Web Developer', 'Chatbot Creator', 'Prompt Engineer', 'Video Editor', 'Photographer'];
   const typingSpeed = 150; // Milliseconds
   useEffect(() => {
