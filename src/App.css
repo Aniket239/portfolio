@@ -1,12 +1,24 @@
 /*===================================================================== General styles ===================================================================================*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
-body,
 html {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
 }
+
+/* App.css or global styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.App {
+  position: relative;
+}
+
 
 header,
 footer {
@@ -15,6 +27,132 @@ footer {
   text-align: center;
 }
 
+/* ================================================================================= Background ==================================================================*/
+/* StarBackground.css */
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.stars-container,
+.shooting-stars-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+.shooting-star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+.star {
+  animation: twinkle linear infinite;
+}
+
+.shooting-star {
+  animation: shooting-star linear infinite;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes shooting-star {
+  to {
+    transform: translateX(-100vw) translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* ================================================================================== Loading ================================================================== */
+
+/* Loading.css */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 2rem;
+  overflow: hidden;
+  /* Hide overflow during animation */
+}
+
+.loading-text {
+  margin-bottom: 1rem;
+  animation: fadeIn 1s ease-out;
+}
+
+.loading-animation {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  position: relative;
+}
+
+.v-left,
+.v-right {
+  width: 0;
+  height: 100%;
+  border-left: 2px solid #1b1111;
+  position: absolute;
+  top: 0;
+  transition: width 2s ease-out;
+}
+
+.v-left {
+  left: 0;
+}
+
+.v-right {
+  right: 0;
+}
+
+.v-left.anim,
+.v-right.anim {
+  width: 50%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
 /*============================================================================ navbar or header ========================================================================*/
 
 header {
@@ -22,6 +160,8 @@ header {
   top: 0;
   width: 100%;
   height: 120px;
+  background-color: rgba(225, 225, 225, 0.2);
+  backdrop-filter: blur(5px);
 }
 
 .desktop-nav {
@@ -40,7 +180,6 @@ li {
   padding: 0 5% 0 10%;
 
 }
-
 ul,
 a {
   text-decoration: none;
@@ -192,9 +331,10 @@ a {
 
 /*============================================================================== for mobile - navbar ======================================================================*/
 @media (max-width: 768px) {
-  header{
-    height: 70px;
+  header {
+    height: 75px;
   }
+
   .logo {
     background-image: url('./logot.png');
     mix-blend-mode: lighten;
@@ -209,7 +349,6 @@ a {
 
   .name-mobile-view {
     display: block;
-    font-size: 22px;
     justify-content: center;
     margin-top: 23px;
   }
@@ -217,7 +356,7 @@ a {
   .menu-icon {
     display: block;
     position: absolute;
-    align-content:center;
+    align-content: center;
     top: 23px;
     right: 5%;
     margin-bottom: 2%;
@@ -248,21 +387,28 @@ a {
 
   .mobile-nav {
     display: block;
+    background-color: rgba(0, 0, 0, 1);
+    backdrop-filter: blur(10px);
+    font-size: 22px;
+    height: 110vh;
+    padding: 20% 0;
+
+  }
+  .fancy{
+    margin: 5% 0;
   }
 
   .mobile-nav ul li a {
     color: white;
     text-decoration: none;
     font-family: 'Roboto Mono', monospace;
-  }
-
-  .mobile-nav ul li a:hover {
-    color: #ff000d;
+    margin-right: 5%;
   }
 
   .mobile-nav ul {
     list-style: none;
-    padding: 1em 0;
+    padding: 0;
+    
   }
 
   .mobile-nav ul li {
@@ -276,9 +422,53 @@ a {
 }
 
 /*===================================================================================== about me =======================================================================*/
+.about-me-section {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin: 9% 2% 2% 2%;
+  color: #fff;
+  height: 600px;
+}
+
+.profile-pic {
+  background-image: url('./mypic.jpg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 90%;
+  width: 70%;
+  mix-blend-mode: lighten;
+  z-index: -1;
+
+}
+
 .introduction {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  padding: 5%;
+}
+
+.intro {
+  display: flex;
   flex-direction: row;
+}
+
+.intro h1 {
+  font-size: 3rem;
+  margin: 0 0.5rem 0 0;
+}
+
+.introduction h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.introduction p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 @keyframes blink-caret {
@@ -304,17 +494,11 @@ a {
 
 .ball {
   width: 50px;
-  /* Size of the ball */
   height: 50px;
-  /* Size of the ball */
   background-color: red;
-  /* Color of the ball */
   border-radius: 50%;
-  /* Makes it round */
   position: relative;
-  /* Required for the animation */
   animation: jump 2s infinite;
-  /* Apply the jumping animation */
 }
 
 @keyframes jump {
@@ -324,61 +508,21 @@ a {
     transform: translateY(0);
   }
 
-  /* Starting and ending position */
   50% {
     transform: translateY(-10px);
   }
-
-  /* Height of the jump */
-}
-
-
-.about-me-section {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: left;
-  padding: 85px 0 0 85px;
-  margin: 10% 2% 2% 2%;
-  color: #fff;
-  background-color: #000;
-  background-image: url('./mypic.jpg');
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-position: 90%;
-  height: 500px;
-}
-
-.introduction h1 {
-  font-size: 3rem;
-  margin: 0 0.5rem 0 0;
-}
-
-.about-me-content .highlight {
-  color: #FED941;
-}
-
-.about-me-content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.about-me-content p {
-  font-size: 3rem;
-  margin-bottom: 2rem;
 }
 
 .whatsapp-btn {
   background-color: #04880b;
   color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
+  width: 27%;
+  text-align: center;
+  padding: 2% 3%;
+  border: 2px solid wheat;
+  border-radius: 50px;
   cursor: pointer;
   transition-duration: 0.5s;
-  width: 180px;
 }
 
 .whatsapp-btn:hover {
@@ -394,21 +538,28 @@ a {
 
 @media (max-width: 768px) {
 
+  .about-me-section {
+    height: auto;
+    padding: 0 2%;
+    flex-direction: column;
+    margin-top: 83px;
+    background: none;
+    justify-content: center;
+    align-items: center;
+  }
   .profile-pic {
     background-image: url('./mypic.jpg');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    height: 500px;
-
+    height: 400px;
+    width: 80%;
   }
-
-  .about-me-section {
-    height: auto;
-    padding: 0 5% 5% 5%;
-    margin-top: 83px;
-    background: none;
-    background-color: #000;
+  .introduction{
+    width: 100%;
+    padding: 5% 0 5% 5%;
+    justify-content: center;
+    align-items: center;
   }
 
   .introduction h1 {
@@ -424,6 +575,9 @@ a {
   .about-me-section p {
     font-size: 1rem;
     margin-bottom: 2rem;
+  }
+  .whatsapp-btn{
+    width: 50%;
   }
 }
 

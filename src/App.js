@@ -1,21 +1,43 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import AboutMe from './components/AboutMe';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import LoadingAnimation from './components/Loading';
+import StarBackground from './components/StarBackground';
 
-function App() {
+
+const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate data loading delay
+    const loadingTimeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+
+    // Clear the timeout on component unmount (cleanup)
+    return () => clearTimeout(loadingTimeout);
+  }, []);
+
   return (
     <div className="App">
-      <Header />
-      <main>
-        <AboutMe />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
+      {isLoading ? (
+        <LoadingAnimation />
+      ) : (
+        <>
+          <StarBackground />
+          <Header />
+          <main>
+            <AboutMe />
+            <Projects />
+            <Contact />
+          </main>
+          <Footer />
+        </>
+      )}
     </div>
   );
 }

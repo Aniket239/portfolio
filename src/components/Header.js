@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Header() {
   const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
@@ -7,14 +7,29 @@ function Header() {
     setIsMobileNavVisible(!isMobileNavVisible);
   };
 
+  useEffect(() => {
+    // Disable scrolling when the menu is open
+    if (isMobileNavVisible) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+
+    // Clean up the effect
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isMobileNavVisible]);
+
   return (
     <header>
       <div className="logo">
       </div>
-      <h2 className='name-mobile-view'>Protfolio</h2>
+      <h2 className='name-mobile-view'>Aniket Biswas</h2>
       <div className="menu-icon" onClick={toggleNav}>
-        {isMobileNavVisible ? <span>✖</span> : <span>☰</span>} {/* Toggle between close and hamburger icon */}
+        {isMobileNavVisible ? <span>✖</span> : <span>☰</span>}
       </div>
+
       <nav className="desktop-nav">
         <ul>
           <li>
