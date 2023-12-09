@@ -25,11 +25,11 @@ const StarBackground = () => {
         const shootingStar = document.createElement('div');
         shootingStar.className = 'shooting-star';
 
-        const initialX = Math.random() * 100;
-        const initialY = Math.random() * 100;
+        const initialX = window.innerWidth; // Start from the rightmost edge
+        const initialY = Math.random() * window.innerHeight; // Random Y position
 
-        shootingStar.style.left = `${initialX}vw`;
-        shootingStar.style.top = `${initialY}vh`;
+        shootingStar.style.left = `${initialX}px`;
+        shootingStar.style.top = `${initialY}px`;
 
         shootingStarsContainer.appendChild(shootingStar);
 
@@ -39,8 +39,8 @@ const StarBackground = () => {
     };
 
     const animateShootingStar = (shootingStar) => {
-      const speed = Math.random() * 4 + 2; // Adjusted speed
-      const angle = Math.random() * 360;
+      const speed = Math.random() * 4 + 8; // Adjusted speed
+      const angle = 180; // Move horizontally from right to left
       const radians = (angle * Math.PI) / 180;
 
       const deltaX = Math.cos(radians) * speed;
@@ -48,15 +48,14 @@ const StarBackground = () => {
 
       const updateStarPosition = () => {
         const rect = shootingStar.getBoundingClientRect();
-        const newX = rect.left + deltaX;
-        const newY = rect.top + deltaY;
+        const newX = rect.left - deltaX; // Move to the left
+        const newY = rect.top + deltaY; // Keep the same Y position
 
         // Check if shooting star is out of the screen
-        if (newX < 0 || newX > window.innerWidth || newY < 0 || newY > window.innerHeight) {
+        if (newX + rect.width < 0) {
           // Remove shooting star
           shootingStar.remove();
           shootingStarCount--;
-          // Generate a new shooting star
           generateShootingStar();
         } else {
           shootingStar.style.left = `${newX}px`;
@@ -68,7 +67,10 @@ const StarBackground = () => {
       requestAnimationFrame(updateStarPosition);
     };
 
-    generateStars(starsContainer, 'star', 300);
+    const numNormalStars = window.innerWidth < 768 ? 150 : 300;
+    const numShootingStars = 10; // Adjust as needed
+    generateStars(starsContainer, 'star', numNormalStars);
+    generateStars(shootingStarsContainer, 'shooting-star', numShootingStars);
 
     const handleMouseMove = (e) => {
       const mouseX = e.clientX;

@@ -13,10 +13,9 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate data loading delay
     const loadingTimeout = setTimeout(() => {
       setIsLoading(false);
-    }, 3000);
+    }, 5000);
 
     // Clear the timeout on component unmount (cleanup)
     return () => clearTimeout(loadingTimeout);

@@ -1,26 +1,41 @@
-// LoadingAnimation.js
-import React from 'react';
-import ContentLoader from 'react-content-loader';
+import React, { useState, useEffect } from 'react';
 
-const LoadingAnimation = () => {
+function Loading() {
+  const [loadingComplete, setLoadingComplete] = useState(false);
+  const [typedText, setTypedText] = useState('');
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const fullText = ['Portfolio', 'Aniket Biswas'];
+    const typingSpeed = 150; // Milliseconds
+
+    const typeNextLetter = () => {
+      if (typedText.length < fullText[index].length) {
+        setTimeout(() => {
+          setTypedText(fullText[index].substring(0, typedText.length + 1));
+        }, typingSpeed);
+      } else {
+        setTimeout(() => {
+          if (index === fullText.length - 1) {
+            setLoadingComplete(true);
+          } else {
+            setIndex((prevIndex) => prevIndex + 1);
+            setTypedText('');
+          }
+        }, 200);
+      } 
+    };    
+    typeNextLetter();
+    return () => {
+      clearTimeout(typeNextLetter);
+    };
+  }, [typedText, index]);
+
   return (
-    <ContentLoader
-      speed={2}
-      width={400}
-      height={160}
-      viewBox="0 0 400 160"
-      backgroundColor="#f3f3f3"
-      foregroundColor="#ecebeb"
-    >
-      {/* Rectangle for main content */}
-      <rect x="0" y="0" rx="3" ry="3" width="400" height="100" />
-
-      {/* Lines for additional content */}
-      <rect x="0" y="110" rx="3" ry="3" width="250" height="10" />
-      <rect x="0" y="130" rx="3" ry="3" width="180" height="10" />
-      <rect x="0" y="150" rx="3" ry="3" width="200" height="10" />
-    </ContentLoader>
+    <div className={`loading-screen ${loadingComplete ? 'fade-out' : ''}`}>
+      <h1 className="loading-typing-effect">{typedText}</h1>
+    </div>
   );
-};
+}
 
-export default LoadingAnimation;
+export default Loading;
