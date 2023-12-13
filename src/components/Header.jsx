@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 function Header() {
   const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
 
   const toggleNav = () => {
     setIsMobileNavVisible(!isMobileNavVisible);
@@ -21,8 +23,23 @@ function Header() {
     };
   }, [isMobileNavVisible]);
 
+  useEffect(() => {
+    // Update scroll position
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Clean up the effect
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <header>
+    <header style={{ backgroundColor: scrollPosition > 50 ? '#000' : 'transparent' }}>
       <div className="logo">
       </div>
       <h2 className='name-mobile-view'>Aniket Biswas</h2>

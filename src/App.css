@@ -5,6 +5,7 @@ html {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
 }
 
 /* App.css or global styles */
@@ -57,6 +58,7 @@ footer {
   border-radius: 50%;
   opacity: 0.8;
 }
+
 .shooting-star {
   position: absolute;
   width: 5px;
@@ -78,9 +80,11 @@ footer {
   0% {
     opacity: 0.8;
   }
+
   50% {
     opacity: 0.3;
   }
+
   100% {
     opacity: 0.8;
   }
@@ -127,7 +131,7 @@ footer {
   }
 }
 
-.loading-typing-effect{
+.loading-typing-effect {
   font-size: 50px;
   animation: typing 1.5s steps(20, end) forwards, blink-caret 1s step-end infinite;
 }
@@ -141,7 +145,8 @@ header {
   height: 120px;
   background-color: rgba(225, 225, 225, 0.2);
   backdrop-filter: blur(5px);
-}
+  transition: background-color 0.3s ease;
+z-index: +5;}
 
 .desktop-nav {
   margin: 0 0 0 30em;
@@ -159,6 +164,7 @@ li {
   padding: 0 5% 0 10%;
 
 }
+
 ul,
 a {
   text-decoration: none;
@@ -373,7 +379,8 @@ a {
     padding: 20% 0;
 
   }
-  .fancy{
+
+  .fancy {
     margin: 5% 0;
   }
 
@@ -387,7 +394,7 @@ a {
   .mobile-nav ul {
     list-style: none;
     padding: 0;
-    
+
   }
 
   .mobile-nav ul li {
@@ -419,7 +426,6 @@ a {
   width: 70%;
   mix-blend-mode: lighten;
   z-index: -1;
-
 }
 
 .introduction {
@@ -469,6 +475,7 @@ a {
   overflow: hidden;
   animation: typing 1.5s steps(20, end) forwards, blink-caret 1s step-end infinite;
   animation-delay: 0s, 1.5s;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .ball {
@@ -495,9 +502,9 @@ a {
 .whatsapp-btn {
   background-color: #04880b;
   color: #fff;
-  width: 27%;
+  width: 28%;
   text-align: center;
-  padding: 2% 3%;
+  padding: 2.5% 3% 2.7% 3%;
   border: 2px solid wheat;
   border-radius: 50px;
   cursor: pointer;
@@ -526,6 +533,7 @@ a {
     justify-content: center;
     align-items: center;
   }
+
   .profile-pic {
     background-image: url('./mypic.jpg');
     background-size: contain;
@@ -534,7 +542,8 @@ a {
     height: 400px;
     width: 80%;
   }
-  .introduction{
+
+  .introduction {
     width: 100%;
     padding: 5% 0 5% 5%;
     justify-content: center;
@@ -555,56 +564,83 @@ a {
     font-size: 1rem;
     margin-bottom: 2rem;
   }
-  .whatsapp-btn{
+
+  .whatsapp-btn {
     width: 50%;
   }
 }
 
 /* ============================================================================ Projects ============================================================ */
 
-.projects-container {
-  display: flex;
-  overflow: hidden;
+/* Custom styles for the Swiper container */
+.swiper-container {
+  width: 80%;
+  margin: 5% auto;
 }
 
-.card-scroller {
+/* Custom styles for each Swiper slide */
+.swiper-slide {
   display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  margin: 2% 5%;
-  gap: 5%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  color: #fff;
 }
 
-.card {
-  background-color: #000;
-  flex: 0 0 auto;
-  width: 26vw;
-  height: 26vw;
+/* Active slide style */
+.swiper-slide-active {
+  transform: scale(1.1);
+}
+
+/* Pagination styles (optional) */
+.swiper-pagination {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.swiper-button-next {
+  right: 1px;
+
+}
+
+.swiper-button-prev {
+  left: 1px;
+}
+
+.swiper-pagination-bullet {
+  background-color: rgb(255, 255, 255);
+}
+
+.swiper-scrollbar-drag {
+  background-color: green;
+}
+.custom-slide {
   background-size: cover;
   background-position: center;
-  position: relative;
-  scroll-snap-align: start;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.card-title {
+.slide-content {
   position: absolute;
   bottom: 0;
-  width: 100%;
+  left: 0;
+  right: 0;
   background: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 10px 0;
+  padding: 10px;
   text-align: center;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
 }
 
-.card-details {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.slide-content h3 {
+  margin: 0;
+  color: white;
+}
+
+.openai{
+  height: 100%;
 }
 
 

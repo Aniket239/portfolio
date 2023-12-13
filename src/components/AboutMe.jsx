@@ -15,7 +15,7 @@ function AboutMe() {
       setTimeout(() => {
         setIndex((prevIndex) => (prevIndex + 1) % fullText.length);
         setTypedText('');
-      }, 2000);
+      }, 3000);
     }
   }, [typedText, index, fullText]);
   const whatsappNumber = "6290034904"; // Your WhatsApp number
