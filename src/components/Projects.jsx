@@ -5,7 +5,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import openaiImage from '../openai.png'; // Adjust the path as needed
+import openaiImage from '../ab.png'; // Adjust the path as needed
 
 
 function Projects() {
@@ -35,8 +35,8 @@ function Projects() {
   return (
     <Swiper
       modules={[Navigation, Pagination, Scrollbar, A11y]}
-      spaceBetween={50}
-      slidesPerView={2}
+      spaceBetween={150}
+      slidesPerView={3}
       style={{ color: 'white', margin: '10% 5%', height: '40vw' }}
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
@@ -44,15 +44,19 @@ function Projects() {
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
     >
+      <div className='swiper-card-container'>
       {imageData.map((item) => (
-        <SwiperSlide key={item.id} style={{ backgroundImage: `url(${item.image})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
+        <SwiperSlide key={item.id} style={{ backgroundImage: `url(${item.image})`, backgroundRepeat: 'no-repeat', backgroundSize: 'contain' }}>
           <div className='slide-content'>
             <p className='project-title'>{item.title}</p>
           </div>
         </SwiperSlide>
       ))}
+      </div>
     </Swiper>
-  );
+
+);
 }
+
 
 export default Projects;

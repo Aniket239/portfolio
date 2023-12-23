@@ -5,7 +5,7 @@ function AboutMe() {
   const [index, setIndex] = useState(0);
   // eslint-disable-next-line
   const fullText = ['Web Developer', 'Chatbot Creator', 'Prompt Engineer', 'Video Editor', 'Photographer'];
-  const typingSpeed = 150; // Milliseconds
+  const typingSpeed = 100; // Milliseconds
   useEffect(() => {
     if (typedText.length < fullText[index].length) {
       setTimeout(() => {
