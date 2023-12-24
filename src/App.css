@@ -1,6 +1,8 @@
 /*===================================================================== General styles ===================================================================================*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
-
+::-webkit-scrollbar {
+  display: none;
+  }
 html {
   margin: 0;
   padding: 0;
@@ -138,6 +140,46 @@ footer {
 
 /*============================================================================ navbar or header ========================================================================*/
 
+.toggle {
+  background-color: black;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 0 50px 20px rgba(0, 0, 0, .1);
+  line-height: 1;
+  margin-top:40%;
+}
+
+.input {
+  display: none;
+}
+
+.icon {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+  transition: transform 500ms;
+}
+
+.icon--moon {
+  transition-delay: 200ms;
+}
+
+.icon--sun {
+  transform: scale(0);
+}
+
+#switch:checked + .icon--moon {
+  transform: rotate(360deg) scale(0);
+}
+
+#switch:checked ~ .icon--sun {
+  transition-delay: 200ms;
+  transform: scale(1) rotate(360deg);
+}
+
 header {
   position: fixed;
   top: 0;
@@ -146,11 +188,10 @@ header {
   background-color: rgba(225, 225, 225, 0.2);
   backdrop-filter: blur(5px);
   transition: background-color 0.3s ease;
-z-index: +5;}
+  z-index: +5;}
 
 .desktop-nav {
   margin: 0 0 0 30em;
-
 }
 
 .desktop-nav ul {
@@ -161,7 +202,7 @@ z-index: +5;}
 }
 
 li {
-  padding: 0 5% 0 10%;
+  padding: 0 5% 0 0%;
 
 }
 
@@ -314,10 +355,24 @@ a {
   display: none;
 }
 
+.mobile-theme{
+  display: none;
+}
+
 /*============================================================================== for mobile - navbar ======================================================================*/
 @media (max-width: 768px) {
   header {
+    width: 100%;
     height: 75px;
+  }
+  .toggle{
+    margin: 0;
+  }
+  .mobile-theme{
+    display: block;
+    position: absolute;
+    top: 15%;
+    right:15%;
   }
 
   .logo {
@@ -325,11 +380,11 @@ a {
     mix-blend-mode: lighten;
     height: 10px;
     width: 11px;
-    position: absolute;
     background-size: cover;
-    left: 49%;
     padding: 10px;
     top: 25%;
+    position: absolute;
+    left: 5%;
   }
 
   .name-mobile-view {
@@ -358,16 +413,12 @@ a {
 
   .fancy {
     padding: 0.5em 1.5em;
-
+    margin: 5% 0;
   }
 
   .desktop-nav {
     display: none;
 
-  }
-
-  header {
-    width: 100%;
   }
 
   .mobile-nav {
@@ -377,34 +428,24 @@ a {
     font-size: 22px;
     height: 110vh;
     padding: 20% 0;
-
-  }
-
-  .fancy {
-    margin: 5% 0;
   }
 
   .mobile-nav ul li a {
     color: white;
     text-decoration: none;
     font-family: 'Roboto Mono', monospace;
-    margin-right: 5%;
+    margin-left: 5%;
   }
 
   .mobile-nav ul {
     list-style: none;
     padding: 0;
-
   }
 
   .mobile-nav ul li {
     padding-top: 5%;
   }
 
-  .logo {
-    position: absolute;
-    left: 5%;
-  }
 }
 
 /*===================================================================================== about me =======================================================================*/
@@ -572,87 +613,6 @@ a {
 
 /* ============================================================================ Projects ============================================================ */
 
-::-webkit-scrollbar {
-display: none;
-}
-
-.swiper {
-  width: 100%;
-  height: 50vh !important;
-  margin: 5% 0px !important;
-  padding: 2% 0 0 0 !important;
-}
-.swiper-wrapper{
-  width: 30% !important;
-}
-/* Custom styles for each Swiper slide */
-.swiper-slide {
-  width: 26vw !important;
-  height: 40vh !important;
-  margin: 0 12.5% !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  cursor: pointer;
-  color: #fff;
-}
-
-/* Active slide style */
-.swiper-slide-active {
-  transform: scale(1.1);
-}
-
-/* Pagination styles (optional) */
-.swiper-pagination {
-display: none;
-}
-
-.swiper-backface-hidden .swiper-slide:hover{
-  transform: scale(1.05);
-
-}
-.swiper-button-prev:after, .swiper-button-next:after{
-  color: white;
-}
-
-.swiper-button-next {
-  right: 1px;
-}
-
-.swiper-button-prev {
-  left: 1px;
-}
-
-.swiper-scrollbar-drag {
-  background-color: green;
-}
-.custom-slide {
-  background-size: cover;
-  background-position: center;
-}
-
-.slide-content {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 10px;
-  text-align: center;
-}
-
-.slide-content h3 {
-  margin: 0;
-  color: white;
-}
-
-.openai{
-  height: 100%;
-}
 
 
 /*============================================================================= footer ===============================================================================*/

@@ -7,7 +7,7 @@ import AboutMe from './components/AboutMe';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import LoadingAnimation from './components/Loading';
-import StarBackground from './components/StarBackground';
+// import StarBackground from './components/StarBackground';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -27,7 +27,7 @@ const App = () => {
         <LoadingAnimation />
       ) : (
         <>
-          <StarBackground />
+          {/* <StarBackground /> */}
           <Header />
           <Element name="about" className="element">
             <AboutMe />
