@@ -1,7 +1,11 @@
 {
   "short_name": "React Portfolio",
   "name": "Portfolio",
+  "description": "My awesome portfolio showcasing my skills and projects.",
   "start_url": "/",
+  "scope": "/",
+  "lang": "en",
+  
   "icons": [
     {
         "src": "android-chrome-192x192.png",
@@ -13,7 +17,7 @@
         "src": "android-chrome-512x512.png",
         "sizes": "512x512",
         "type": "image/png",
-        "purpose": "any"
+        "purpose": "maskable"
     }
 ],
 "theme_color": "#ffffff",
