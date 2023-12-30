@@ -44,7 +44,9 @@ function Header() {
       </div>
       <h2 className='name-mobile-view'>Aniket Biswas</h2>
       <div className="menu-icon" onClick={toggleNav}>
-        {isMobileNavVisible ? <span>✖</span> : <span>☰</span>}
+      <span className={`material-symbols-outlined ${isMobileNavVisible ? 'rotate' : ''}`}>
+        {isMobileNavVisible ? <span class="material-symbols-outlined">close</span> :<span class="material-symbols-outlined">menu</span> }
+        </span>
       </div>
 
       <nav className="desktop-nav">

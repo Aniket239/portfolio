@@ -18,8 +18,13 @@ function AboutMe() {
       }, 3000);
     }
   }, [typedText, index, fullText]);
-  const whatsappNumber = "6290034904"; // Your WhatsApp number
-  const whatsappLink = `https://wa.me/${whatsappNumber}`;
+  
+  const openWhatsApp = () => {
+    const whatsappNumber = "6290034904"; // Your WhatsApp number
+    const whatsappLink = `https://wa.me/${whatsappNumber}`;
+    window.open(whatsappLink, '_blank');
+  };
+
   return (
     <section id="about" className="about-me-section">
       <div className='profile-pic'>
@@ -31,8 +36,8 @@ function AboutMe() {
         </div>
         <div className="ball" hidden></div>
         <h2>Freelancer Expert in Web Development</h2>
-        <p>1+ years of experience in Web development. My mission is to design and develop a website that you and your audience love.</p>
-        <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="whatsapp-btn">Let's Chat on WhatsApp</a>
+        <p>1+ years of experience in Web development. My mission is to design and develop a website that you and your audience love.</p>        
+        <button  onClick={openWhatsApp} className="whatsapp-btn">Chat on WhatsApp</button>
         <div className="about-me-image">
         </div>
       </div>
