@@ -3,14 +3,17 @@ import React, { useState, useEffect } from 'react';
 function Header() {
   const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [isLightTheme, setIsLightTheme] = useState(false);
 
+  const toggleTheme = () => {
+    setIsLightTheme((prevTheme) => !prevTheme);
+  };
 
   const toggleNav = () => {
     setIsMobileNavVisible(!isMobileNavVisible);
   };
 
   useEffect(() => {
-    // Disable scrolling when the menu is open
     if (isMobileNavVisible) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -77,7 +80,7 @@ function Header() {
           </li>
           <li>
           <div class="container">
-              <label class="toggle" for="switch">
+          <label className={`toggle ${isLightTheme ? 'light-theme' : ''}`} htmlFor="switch" onClick={toggleTheme}>
                   <input id="switch" class="input" type="checkbox"></input>
                   <div class="icon icon--moon">
                       <svg height="32" width="32" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

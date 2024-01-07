@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link as Element } from 'react-scroll';
 import './App.css';
+import './light-theme.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import AboutMe from './components/AboutMe';
