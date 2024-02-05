@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function AboutMe() {
+function About() {
   const [typedText, setTypedText] = useState('');
   const [index, setIndex] = useState(0);
   // eslint-disable-next-line
@@ -44,4 +44,4 @@ function AboutMe() {
     </section>
   );
 }
-export default AboutMe;
+export default About;

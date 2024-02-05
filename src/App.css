@@ -10,6 +10,7 @@ html {
   padding: 0;
   font-family: Arial, sans-serif;
   scroll-behavior: smooth;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* App.css or global styles */
@@ -17,7 +18,6 @@ body {
   margin: 0;
   padding: 0;
   background-color: #000;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .App {
@@ -32,78 +32,9 @@ footer {
   text-align: center;
 }
 
-/* ================================================================================= Background ==================================================================*/
-/* StarBackground.css */
-.background-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: -1;
-}
-
-.stars-container,
-.shooting-stars-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-}
-
-.star {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background-color: #fff;
-  border-radius: 50%;
-  opacity: 0.8;
-}
-
-.shooting-star {
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  background-color: #fff;
-  border-radius: 50%;
-  opacity: 0.8;
-}
-
-.star {
-  animation: twinkle linear infinite;
-}
-
-.shooting-star {
-  animation: shooting-star linear infinite;
-}
-
-@keyframes twinkle {
-  0% {
-    opacity: 0.8;
-  }
-
-  50% {
-    opacity: 0.3;
-  }
-
-  100% {
-    opacity: 0.8;
-  }
-}
-
-@keyframes shooting-star {
-  to {
-    transform: translateX(-100vw) translateY(100vh);
-    opacity: 0;
-  }
-}
 
 /* ================================================================================== Loading ================================================================== */
 
-/* LoadingScreen.css */
 .loading-screen {
   position: fixed;
   top: 0;
@@ -152,7 +83,6 @@ footer {
   cursor: pointer;
   box-shadow: 0 0 50px 20px rgba(0, 0, 0, .1);
   line-height: 1;
-  margin-top: 40%;
 }
 
 .input {
@@ -192,7 +122,9 @@ header {
   transition: background-color 0.3s ease;
   z-index: +5;
 }
-
+.desktop-theme{
+  display: none;
+}
 .desktop-nav {
   margin: 0 0 0 30em;
 }
@@ -201,7 +133,9 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: right;
-  margin: 10px;
+  align-items: center;
+  height: 120px;
+  margin: 0;  
 }
 
 li {
@@ -213,7 +147,8 @@ ul,
 a {
   text-decoration: none;
   list-style-type: none;
-  /* Removes the bullet points */
+  font-family: 'Roboto Mono', monospace;
+  color: white;
 }
 
 @keyframes slideInFromLeft {
@@ -357,6 +292,9 @@ a {
 .name-mobile-view {
   display: none;
 }
+.desktop-theme{
+  display: block;
+}
 
 .mobile-theme {
   display: none;
@@ -499,7 +437,7 @@ a {
 }
 
 .intro h1 {
-  font-size: 3rem;
+  font-size: clamp(1.5rem,0.3043rem + 3vw, 2.5rem);
   margin: 0 0.5rem 0 0;
 }
 
@@ -608,12 +546,10 @@ a {
   }
 
   .introduction h1 {
-    font-size: 1.7rem;
     margin: 0rem 0.5rem 0 0;
   }
 
   .about-me-section h2 {
-    font-size: 1.3rem;
     margin-bottom: 1rem;
   }
 
@@ -629,11 +565,14 @@ a {
 
 /* ============================================================================ Projects ============================================================ */
 
-
+div{
+  color: white;
+}
 
 /*============================================================================= footer ===============================================================================*/
 
 footer {
   padding: 20px;
   display: block;
+  top: 100px;
 }

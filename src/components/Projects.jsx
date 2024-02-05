@@ -1,17 +1,16 @@
 import React from 'react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-
-
 function Projects() {
 
-
   return (
-
-<div></div>
-
+    <>
+    <div>hijkrbhjabhfadjfjhfjdfbfjfdjb fjhb fdhb fdjb fdjb fb fb df bjfd bjfd bjf b</div>
+<div>hijkrbhjabhfadjfjhfjdfbfjfdjb fjhb fdhb fdjb fdjb fb fb df bjfd bjfd bjf b</div>
+<div>hijkrbhjabhfadjfjhfjdfbfjfdjb fjhb fdhb fdjb fdjb fb fb df bjfd bjfd bjf b</div>
+<div>hijkrbhjabhfadjfjhfjdfbfjfdjb fjhb fdhb fdjb fdjb fb fb df bjfd bjfd bjf b</div>
+<div>hijkrbhjabhfadjfjhfjdfbfjfdjb fjhb fdhb fdjb fdjb fb fb df bjfd bjfd bjf b</div>
+<div>hijkrbhjabhfadjfjhfjdfbfjfdjb fjhb fdhb fdjb fdjb fb fb df bjfd bjfd bjf b</div>
+<div>hijkrbhjabhfadjfjhfjdfbfjfdjb fjhb fdhb fdjb fdjb fb fb df bjfd bjfd bjf b</div>
+</>
  );
  }
 

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Link as Element } from 'react-scroll';
 import './App.css';
 import './light-theme.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import AboutMe from './components/AboutMe';
+import About from './components/About';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import LoadingAnimation from './components/Loading';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Corrected import
 // import StarBackground from './components/StarBackground';
 
 const App = () => {
@@ -29,17 +29,16 @@ const App = () => {
       ) : (
         <>
           {/* <StarBackground /> */}
+          <Router>
           <Header />
-          <Element name="about" className="element">
-            <AboutMe />
-          </Element>
-          <Element name="projects" className="element">
-            <Projects />
-          </Element>
-          <Element name="contact" className="element">
-            <Contact />
-          </Element>
+            <Routes>
+              <Route exact path="/" element={<About />} />
+              <Route exact path="/portfolio" element={<About />} />
+              <Route exact path="/projects" element={<Projects />}/>
+              <Route exact path="/contacts" element={<Contact />} />
+            </Routes>
           <Footer />
+          </Router>
         </>
       )}
     </div>
