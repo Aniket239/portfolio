@@ -3,6 +3,14 @@
 ::-webkit-scrollbar {
   display: none;
 }
+*{
+  margin: 0;
+  padding: 0;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+}
 
 html {
   margin: 0;

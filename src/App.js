@@ -4,7 +4,7 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import About from './components/About/About';
 import Projects from './components/projects/Projects';
-import Contact from './components/Contact';
+import Contact from './components/Contact/Contact';
 import LoadingAnimation from './components/Loading/Loading';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Corrected import
 

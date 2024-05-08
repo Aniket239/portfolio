@@ -8,14 +8,20 @@
   
 
 /* ============================================================================ Projects ============================================================ */
+body, html {
+  margin: 0;
+  padding: 0;
+}
+.landing-page{
+  margin-left: 80px;
+}
 
 .project-page {
   max-width: 1800px;
   margin: 100px auto;
   padding: 20px;
 }
-h2{
-  color: #fff;
+.landing-title{
   width: 100%;
   text-align: center;
 }
@@ -46,14 +52,4 @@ h2{
   filter: blur(4px);
   transform: scale(0.9);
   z-index: 1;
-}
-
-
-
-/*============================================================================= footer ===============================================================================*/
-
-footer {
-  padding: 20px;
-  display: block;
-  top: 100px;
 }
