@@ -1,0 +1,38 @@
+/* ================================================================================== Loading ================================================================== */
+
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .fade-out {
+    opacity: 0;
+  }
+  
+  @keyframes blink-caret {
+  
+    0%,
+    100% {
+      border-color: transparent;
+    }
+  
+    50% {
+      border-color: white;
+    }
+  }
+  
+  .loading-typing-effect {
+    font-size: 50px;
+    animation: typing 1.5s steps(20, end) forwards, blink-caret 1s step-end infinite;
+  }
+  

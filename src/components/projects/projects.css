@@ -4,3 +4,56 @@
     max-height: 50vh;
     width: 20%;
   }
+
+  
+
+/* ============================================================================ Projects ============================================================ */
+
+.project-page {
+  max-width: 1800px;
+  margin: 100px auto;
+  padding: 20px;
+}
+h2{
+  color: #fff;
+  width: 100%;
+  text-align: center;
+}
+
+.project-card {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin: 10px;
+  height: 30vh;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 25px;
+}
+.project-page .slick-slide {
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+/* Apply a slight scale and remove blur for the center slide */
+.project-page .slick-center .project-card {
+  transform: scale(1.05);
+  filter: none !important; /* Override any previous filter */
+  z-index: 2; /* Ensure it's above other slides */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Optional: Add more shadow to the center slide */
+}
+
+/* Apply blur to slides that are not the center */
+.project-page .slick-slide:not(.slick-center) .project-card {
+  filter: blur(4px);
+  transform: scale(0.9);
+  z-index: 1;
+}
+
+
+
+/*============================================================================= footer ===============================================================================*/
+
+footer {
+  padding: 20px;
+  display: block;
+  top: 100px;
+}

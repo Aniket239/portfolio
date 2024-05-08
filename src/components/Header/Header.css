@@ -1,0 +1,86 @@
+/* ======================= dark mode ===============================*/
+
+.dark-mode {
+    background-color: #130D14;
+    color: white;
+  }
+
+  .dark-mode .header {
+    background-color: #130D14;
+}
+
+.dark-mode .header a{
+    color: white;
+}
+
+.dark-mode .toggle{
+    background-color: #130D14;
+    color: white;
+}
+
+/* ======================= light mode ===============================*/
+.header{
+    position: fixed;
+    left: 0;
+    min-width: 5vw;
+    height: 100vh;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #f6f6f6;
+}
+
+.header a{
+    rotate: 270deg;
+    text-decoration: none;
+    color: black;
+    font-size: large;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -75%;
+}
+.toggle {
+    background-color: #f6f6f6;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    line-height: 1;
+    color: black;
+  }
+  
+  .input {
+    display: none;
+  }
+  
+  .icon {
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+    transition: transform 500ms;
+  }
+  
+  .icon--moon {
+    transition-delay: 200ms;
+  }
+  
+  .icon--sun {
+    transform: scale(0);
+  }
+  
+  #switch:checked + .icon--moon {
+    transform: rotate(360deg) scale(0);
+  }
+  
+  #switch:checked ~ .icon--sun {
+    transition-delay: 200ms;
+    transform: scale(1) rotate(360deg);
+  }

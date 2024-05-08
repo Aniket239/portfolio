@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import './Loading.css'
 function Loading() {
   const [loadingComplete, setLoadingComplete] = useState(false);
   const [typedText, setTypedText] = useState('');

@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import './light-theme.css';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import About from './components/About';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import About from './components/About/About';
 import Projects from './components/projects/Projects';
 import Contact from './components/Contact';
-import LoadingAnimation from './components/Loading';
+import LoadingAnimation from './components/Loading/Loading';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Corrected import
-// import StarBackground from './components/StarBackground';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
