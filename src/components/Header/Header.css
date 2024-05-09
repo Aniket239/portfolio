@@ -1,161 +1,47 @@
-/* ======================= dark mode ===============================*/
-
-@media (min-width: 768.98px) and (max-width: 2000px) { 
-    .dark-mode {
-    background-color: #130D14;
-    color: white;
-    transition: all 500ms;
-  }
-
-  .dark-mode .header .header-desktop{
-    background-color: #130D14;
-    transition: all 500ms;
-}
-
-.dark-mode .header a{
-    color: white;
-    transition: all 500ms;
-}
-
-.dark-mode .toggle{
-    background-color: #130D14;
-    color: white;
-    transition: all 500ms;
-}
-
-/* ======================= light mode ===============================*/
-.header .header-desktop{
-    background-color: #f6f6f6;
-    transition: all 500ms;
-}
-
-.header a{
+/* ========================= desktop view ==========================*/
+.header a {
     color: black;
     transition: all 500ms;
-}
-
-.header-desktop{
-    position: fixed;
-    min-width: 5vw;
-    height: 100vh;
-    z-index: 100;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-
-.header-desktop a{
-    rotate: 270deg;
     text-decoration: none;
     font-size: large;
     font-weight: bold;
     letter-spacing: 1px;
 }
 
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -75%;
-}
-.toggle {
-    background-color: #f6f6f6;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    cursor: pointer;
-    line-height: 1;
-    color: black;
-  }
-  
-  .input {
-    display: none;
-  }
-  
-  .icon {
-    grid-column: 1 / 1;
-    grid-row: 1 / 1;
-    transition: transform 500ms;
-  }
-  
-  .icon--sun {
-    transform: scale(0);
-  }
-  
-  #switch:checked + .icon--moon {
-    transform: rotate(360deg) scale(0);
-  }
-  
-  #switch:checked ~ .icon--sun {
-    transition-delay: 200ms;
-    transform: scale(1) rotate(360deg);
-  }
+@media (min-width: 768.98px) and (max-width: 2000px) {
 
-  .header-mobile{
-    display: none;
-  }
-
-}
-/* ========================= mobile view ==========================*/
-
-@media (max-width: 575.98px) { 
-    .header-desktop{
-    display: none;
-    }
-}
-
-@media (min-width: 576px) and (max-width: 767.98px) { 
-    .header-desktop{
-    display: none;
-    }  
-}
-
-
-/* ========================= tab view ==========================*/
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991.98px) { 
-    .header-mobile{
-    display: none;
-    } 
     /* ======================= dark mode ===============================*/
-
     .dark-mode {
         background-color: #130D14;
         color: white;
         transition: all 500ms;
-      }
-    
-      .dark-mode .header .header-desktop{
+    }
+
+    .dark-mode .header .header-desktop {
         background-color: #130D14;
         transition: all 500ms;
     }
-    
-    .dark-mode .header a{
+
+    .dark-mode .header a {
         color: white;
         transition: all 500ms;
     }
-    
-    .dark-mode .toggle{
+
+    .dark-mode .toggle {
         background-color: #130D14;
         color: white;
         transition: all 500ms;
     }
-    
+
     /* ======================= light mode ===============================*/
-    .header .header-desktop{
+    .header .header-desktop {
         background-color: #f6f6f6;
         transition: all 500ms;
     }
-    
-    .header a{
-        color: black;
-        transition: all 500ms;
-    }
-    
-    .header-desktop{
+
+
+
+    .header-desktop {
         position: fixed;
         min-width: 5vw;
         height: 100vh;
@@ -164,21 +50,18 @@
         flex-direction: column;
         justify-content: space-evenly;
     }
-    
-    .header-desktop a{
+
+    .header-desktop a {
         rotate: 270deg;
-        text-decoration: none;
-        font-size: large;
-        font-weight: bold;
-        letter-spacing: 1px;
     }
-    
-    .container{
+
+    .container {
         display: flex;
         justify-content: center;
         align-items: center;
         margin-top: -75%;
     }
+
     .toggle {
         background-color: #f6f6f6;
         width: 56px;
@@ -189,32 +72,318 @@
         cursor: pointer;
         line-height: 1;
         color: black;
-      }
-      
-      .input {
+    }
+
+    .input {
         display: none;
-      }
-      
-      .icon {
+    }
+
+    .icon {
         grid-column: 1 / 1;
         grid-row: 1 / 1;
         transition: transform 500ms;
-      }
-      
-      .icon--sun {
+    }
+
+    .icon--sun {
         transform: scale(0);
-      }
-      
-      #switch:checked + .icon--moon {
+    }
+
+    #switch:checked+.icon--moon {
         transform: rotate(360deg) scale(0);
-      }
-      
-      #switch:checked ~ .icon--sun {
+    }
+
+    #switch:checked~.icon--sun {
         transition-delay: 200ms;
         transform: scale(1) rotate(360deg);
+    }
+
+    .header-mobile {
+        display: none;
+    }
+
+}
+
+/* ========================= small mobile view ==========================*/
+
+@media (max-width: 575.98px) {
+    .header-desktop {
+        display: none;
+    }
+
+    .header-mobile {
+        width: 100vw;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background-color: rgb(80, 151, 151);
+    }
+
+    #nav-container{
+        display: none;
+        z-index: 100;
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        background-color: #f6f6f6;
+        transition: all 100ms;
+    }
+
+    .nav-items{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hamburger {
+        cursor: pointer;
       }
-    
-      .header-mobile{
+      
+      .hamburger input {
         display: none;
       }
+      
+      .hamburger svg {
+        /* The size of the SVG defines the overall size */
+        height: 3em;
+        /* Define the transition for transforming the SVG */
+        transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .line {
+        fill: none;
+        stroke: white;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 3;
+        /* Define the transition for transforming the Stroke */
+        transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+                    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .line-top-bottom {
+        stroke-dasharray: 12 63;
+      }
+      
+      .hamburger input:checked + svg {
+        transform: rotate(-45deg);
+      }
+      
+      .hamburger input:checked + svg .line-top-bottom {
+        stroke-dasharray: 20 300;
+        stroke-dashoffset: -32.42;
+      }
+      
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .toggle {
+        background-color: #f6f6f6;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        line-height: 1;
+        color: black;
+    }
+
+    .input {
+        display: none;
+    }
+
+    .icon {
+        grid-column: 1 / 1;
+        grid-row: 1 / 1;
+        transition: transform 500ms;
+    }
+
+    .icon--sun {
+        transform: scale(0);
+    }
+
+    #switch:checked+.icon--moon {
+        transform: rotate(360deg) scale(0);
+    }
+
+    #switch:checked~.icon--sun {
+        transition-delay: 200ms;
+        transform: scale(1) rotate(360deg);
+    }
+
+
+}
+
+/* ========================= mobile view ==========================*/
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .header-desktop {
+        display: none;
+    }
+
+    .header-mobile {
+        width: 100vw;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background-color: aqua;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .toggle {
+        background-color: #f6f6f6;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        line-height: 1;
+        color: black;
+    }
+
+    .input {
+        display: none;
+    }
+
+    .icon {
+        grid-column: 1 / 1;
+        grid-row: 1 / 1;
+        transition: transform 500ms;
+    }
+
+    .icon--sun {
+        transform: scale(0);
+    }
+
+    #switch:checked+.icon--moon {
+        transform: rotate(360deg) scale(0);
+    }
+
+    #switch:checked~.icon--sun {
+        transition-delay: 200ms;
+        transform: scale(1) rotate(360deg);
+    }
+
+}
+
+
+/* ========================= tab view ==========================*/
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .header-mobile {
+        display: none;
+    }
+
+    /* ======================= dark mode ===============================*/
+
+    .dark-mode {
+        background-color: #130D14;
+        color: white;
+        transition: all 500ms;
+    }
+
+    .dark-mode .header .header-desktop {
+        background-color: #130D14;
+        transition: all 500ms;
+    }
+
+    .dark-mode .header a {
+        color: white;
+        transition: all 500ms;
+    }
+
+    .dark-mode .toggle {
+        background-color: #130D14;
+        color: white;
+        transition: all 500ms;
+    }
+
+    /* ======================= light mode ===============================*/
+    .header .header-desktop {
+        background-color: #f6f6f6;
+        transition: all 500ms;
+    }
+
+    .header a {
+        color: black;
+        transition: all 500ms;
+    }
+
+    .header-desktop {
+        position: fixed;
+        min-width: 5vw;
+        height: 100vh;
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .header-desktop a {
+        rotate: 270deg;
+        text-decoration: none;
+        font-size: large;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: -75%;
+    }
+
+    .toggle {
+        background-color: #f6f6f6;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        line-height: 1;
+        color: black;
+    }
+
+    .input {
+        display: none;
+    }
+
+    .icon {
+        grid-column: 1 / 1;
+        grid-row: 1 / 1;
+        transition: transform 500ms;
+    }
+
+    .icon--sun {
+        transform: scale(0);
+    }
+
+    #switch:checked+.icon--moon {
+        transform: rotate(360deg) scale(0);
+    }
+
+    #switch:checked~.icon--sun {
+        transition-delay: 200ms;
+        transform: scale(1) rotate(360deg);
+    }
+
+    .header-mobile {
+        display: none;
+    }
 }

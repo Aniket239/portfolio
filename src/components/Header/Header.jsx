@@ -7,6 +7,26 @@ const Header = () =>{
     var element = document.body;
     element.classList.toggle("dark-mode");
  }
+ function menu(){
+  var nav_items = document.getElementById("nav-container");
+  if (nav_items.style.display === "block") {
+    nav_items.style.display = "none";
+  } else {
+    nav_items.style.display = "block";
+  }
+ }
+
+ const nav_item = () => {
+  var nav_items = document.getElementById("nav-container");
+  var menu = document.getElementById("menu").checked;
+  if (menu === true)
+    {
+      if (nav_items.style.display === "block") {
+        nav_items.style.display = "none";
+        document.getElementById("menu").checked=false
+      }
+    }
+ }
   return (
     <div className="header">
     <header className="header-desktop">
@@ -30,9 +50,6 @@ const Header = () =>{
       </div>
     </header>
     <header className="header-mobile">
-      <Link to="/portfolio">About</Link>
-      <Link to="/projects">Projects</Link>
-      <Link to="/contacts">Contact</Link>
       <div class="container">
         <label class="toggle" for="switch">
             <input id="switch" class="input" type="checkbox" onChange={myFunction}  />
@@ -48,8 +65,22 @@ const Header = () =>{
             </div>
         </label>
       </div>
+      <label class="hamburger">
+        <input type="checkbox" id="menu" onChange={menu}/>
+          <svg viewBox="0 0 32 32">
+            <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+            <path class="line" d="M7 16 27 16"></path>
+          </svg>
+      </label>
     </header>
+      <div id="nav-container">
+        <div className="nav-items">
+          <Link  to="/portfolio" onClick={nav_item}>About</Link>
+          <Link  to="/projects" onClick={nav_item}>Projects</Link>
+          <Link  to="/contacts" onClick={nav_item}>Contact</Link>
+        </div>
       </div>
+    </div>
   );
 }
 
