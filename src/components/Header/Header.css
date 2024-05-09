@@ -1,4 +1,3 @@
-/* ================================================================== desktop view ========================================================*/
 .header a {
     color: black;
     transition: all 500ms;
@@ -6,6 +5,24 @@
     font-size: large;
     font-weight: bold;
     letter-spacing: 1px;
+}
+
+.logo{
+    background-image: url("../../assets/logoLightMode.PNG");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 60px;
+    height: 60px;
+    mix-blend-mode: darken;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dark-mode .logo{
+    background-image: url("../../assets/logoDarkMode.PNG");
+    mix-blend-mode: lighten;
 }
 
 .container {
@@ -48,7 +65,44 @@
     transform: scale(1) rotate(360deg);
 }
 
+.hamburger {
+    cursor: pointer;
+}
 
+.hamburger input {
+    display: none;
+}
+
+.hamburger svg {
+    height: 3em;
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+    fill: none;
+    stroke: rgb(0, 0, 0);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+        stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+    stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked+svg {
+    transform: rotate(-45deg);
+}
+
+.hamburger input:checked+svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+}
+
+
+/* ============================================================== Desktop view ===========================================================*/
 
 @media (min-width: 768.98px) and (max-width: 2000px) {
 
@@ -89,6 +143,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
+        align-items: center;
     }
 
     .header-desktop a {
@@ -108,6 +163,85 @@
 /* ================================================================ small mobile view =====================================================*/
 
 @media (max-width: 575.98px) {
+    .header-desktop {
+        display: none;
+    }
+
+    #theme{
+        display: none;
+    }
+
+    /* ======================= dark mode ===============================*/
+    .dark-mode {
+        background-color: #130D14;
+        color: white;
+        transition: all 500ms;
+    }
+
+    .dark-mode .header .header-mobile {
+        background-color: #130D14;
+        transition: all 500ms;
+    }
+
+    .dark-mode #nav-container {
+        background-color: #130D14;
+        transition: all 500ms;
+    }
+
+    .dark-mode .nav-items a {
+        color: white;
+        transition: all 500ms;
+    }
+
+    .dark-mode .toggle {
+        background-color: #130D14;
+        color: white;
+        transition: all 500ms;
+    }
+
+    .dark-mode .line {
+        stroke: white;
+    }
+
+    /* ======================= light mode ===============================*/
+
+    .header-mobile {
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 3%;
+        background-color: #f6f6f6;
+    }
+
+    #nav-container {
+        display: none;
+        z-index: 100;
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        background-color: #f6f6f6;
+        transition: all 100ms;
+    }
+
+    .nav-items {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .nav-items a {
+        margin-top: 10%;
+    }
+
+
+}
+
+/* =================================================== mobile view ========================================================================*/
+
+@media (min-width: 576px) and (max-width: 767.98px) {
     .header-desktop {
         display: none;
     }
@@ -147,11 +281,11 @@
     /* ======================= light mode ===============================*/
 
     .header-mobile {
-        width: 100vw;
         height: 100px;
+        padding: 0 3%;
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-between;
         background-color: #f6f6f6;
     }
 
@@ -177,105 +311,9 @@
         margin-top: 10%;
     }
 
-    .hamburger {
-        cursor: pointer;
-    }
-
-    .hamburger input {
-        display: none;
-    }
-
-    .hamburger svg {
-        height: 3em;
-        transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .line {
-        fill: none;
-        stroke: rgb(0, 0, 0);
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-width: 3;
-        transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
-            stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .line-top-bottom {
-        stroke-dasharray: 12 63;
-    }
-
-    .hamburger input:checked+svg {
-        transform: rotate(-45deg);
-    }
-
-    .hamburger input:checked+svg .line-top-bottom {
-        stroke-dasharray: 20 300;
-        stroke-dashoffset: -32.42;
-    }
 }
 
-/* ========================= mobile view ==========================*/
-
-@media (min-width: 576px) and (max-width: 767.98px) {
-    .header-desktop {
-        display: none;
-    }
-
-    .header-mobile {
-        width: 100vw;
-        height: 100px;
-        position: fixed;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        background-color: aqua;
-    }
-
-    .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .toggle {
-        background-color: #f6f6f6;
-        width: 56px;
-        height: 56px;
-        border-radius: 50%;
-        display: grid;
-        place-items: center;
-        cursor: pointer;
-        line-height: 1;
-        color: black;
-    }
-
-    .input {
-        display: none;
-    }
-
-    .icon {
-        grid-column: 1 / 1;
-        grid-row: 1 / 1;
-        transition: transform 500ms;
-    }
-
-    .icon--sun {
-        transform: scale(0);
-    }
-
-    #switch:checked+.icon--moon {
-        transform: rotate(360deg) scale(0);
-    }
-
-    #switch:checked~.icon--sun {
-        transition-delay: 200ms;
-        transform: scale(1) rotate(360deg);
-    }
-
-}
-
-
-/* ========================= tab view ==========================*/
+/* ================================================================ tab view =============================================================*/
 
 @media (min-width: 768px) and (max-width: 991.98px) {
     .header-mobile {
@@ -336,46 +374,9 @@
     }
 
     .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         margin-top: -75%;
     }
 
-    .toggle {
-        background-color: #f6f6f6;
-        width: 56px;
-        height: 56px;
-        border-radius: 50%;
-        display: grid;
-        place-items: center;
-        cursor: pointer;
-        line-height: 1;
-        color: black;
-    }
-
-    .input {
-        display: none;
-    }
-
-    .icon {
-        grid-column: 1 / 1;
-        grid-row: 1 / 1;
-        transition: transform 500ms;
-    }
-
-    .icon--sun {
-        transform: scale(0);
-    }
-
-    #switch:checked+.icon--moon {
-        transform: rotate(360deg) scale(0);
-    }
-
-    #switch:checked~.icon--sun {
-        transition-delay: 200ms;
-        transform: scale(1) rotate(360deg);
-    }
 
     .header-mobile {
         display: none;

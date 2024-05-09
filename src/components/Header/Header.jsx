@@ -9,7 +9,7 @@ const theme = ()=>{
     element.classList.toggle("dark-mode");
   }
   return(
-    <div className="container">
+    <div className="container" id="theme" >
     <label className="toggle" htmlFor="switch">
         <input id="switch" className="input" type="checkbox" onChange={myFunction}  />
         <div className="icon icon--moon">
@@ -31,38 +31,35 @@ const Header = () =>{
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-    // Handler to call on window resize
     function handleResize() {
-      // Set window width to the innerWidth of the browser window
       setWindowWidth(window.innerWidth);
     }
-
-    // Add event listener
     window.addEventListener('resize', handleResize);
-
-    // Call handler right away so state gets updated with initial window size
     handleResize();
-
-    // Remove event listener on cleanup
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   function menu(){
     var nav_items = document.getElementById("nav-container");
+    var theme = document.getElementById("theme");
     if (nav_items.style.display === "block") {
       nav_items.style.display = "none";
+      theme.style.display = "none";
     } else {
       nav_items.style.display = "block";
+      theme.style.display = "block";
     }
   }
 
   const nav_item = () => {
+    var theme = document.getElementById("theme");
     var nav_items = document.getElementById("nav-container");
     var menu = document.getElementById("menu").checked;
     if (menu === true)
       {
         if (nav_items.style.display === "block") {
           nav_items.style.display = "none";
+          theme.style.display = "none";
           document.getElementById("menu").checked=false
         }
       }
@@ -71,6 +68,7 @@ const Header = () =>{
   return (
     <div className="header">
     <header className="header-desktop">
+      <div className="logo"></div>
       <Link to="/portfolio">About</Link>
       <Link to="/projects">Projects</Link>
       <Link to="/contacts">Contact</Link>
@@ -78,6 +76,7 @@ const Header = () =>{
     </header>
     
     <header className="header-mobile">
+      <div className="logo"></div>
       {theme()}
       <label className="hamburger">
         <input type="checkbox" id="menu" onChange={menu}/>
