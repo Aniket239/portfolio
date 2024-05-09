@@ -252,6 +252,10 @@
         display: none;
     }
 
+    #theme{
+        display: none;
+    }
+
     /* ======================= dark mode ===============================*/
     .dark-mode {
         background-color: #130D14;
