@@ -40,6 +40,8 @@
     cursor: pointer;
     line-height: 1;
     color: black;
+    transition: all 500ms;
+
 }
 
 .input {
@@ -101,7 +103,6 @@
     stroke-dashoffset: -32.42;
 }
 
-
 /* ============================================================== Desktop view ===========================================================*/
 
 @media (min-width: 768.98px) and (max-width: 2000px) {
@@ -128,6 +129,7 @@
         color: white;
         transition: all 500ms;
     }
+    
 
     /* ======================= light mode ===============================*/
     .header .header-desktop {
@@ -155,6 +157,10 @@
     }
 
     .header-mobile {
+        display: none;
+    }
+
+    .nav-items{
         display: none;
     }
 
