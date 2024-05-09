@@ -1,4 +1,4 @@
-/* ========================= desktop view ==========================*/
+/* ================================================================== desktop view ========================================================*/
 .header a {
     color: black;
     transition: all 500ms;
@@ -7,6 +7,48 @@
     font-weight: bold;
     letter-spacing: 1px;
 }
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.toggle {
+    background-color: #f6f6f6;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    line-height: 1;
+    color: black;
+}
+
+.input {
+    display: none;
+}
+
+.icon {
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+    transition: transform 500ms;
+}
+
+.icon--sun {
+    transform: scale(0);
+}
+
+#switch:checked+.icon--moon {
+    transform: rotate(360deg) scale(0);
+}
+
+#switch:checked~.icon--sun {
+    transition-delay: 200ms;
+    transform: scale(1) rotate(360deg);
+}
+
+
 
 @media (min-width: 768.98px) and (max-width: 2000px) {
 
@@ -39,8 +81,6 @@
         transition: all 500ms;
     }
 
-
-
     .header-desktop {
         position: fixed;
         min-width: 5vw;
@@ -56,45 +96,7 @@
     }
 
     .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         margin-top: -75%;
-    }
-
-    .toggle {
-        background-color: #f6f6f6;
-        width: 56px;
-        height: 56px;
-        border-radius: 50%;
-        display: grid;
-        place-items: center;
-        cursor: pointer;
-        line-height: 1;
-        color: black;
-    }
-
-    .input {
-        display: none;
-    }
-
-    .icon {
-        grid-column: 1 / 1;
-        grid-row: 1 / 1;
-        transition: transform 500ms;
-    }
-
-    .icon--sun {
-        transform: scale(0);
-    }
-
-    #switch:checked+.icon--moon {
-        transform: rotate(360deg) scale(0);
-    }
-
-    #switch:checked~.icon--sun {
-        transition-delay: 200ms;
-        transform: scale(1) rotate(360deg);
     }
 
     .header-mobile {
@@ -103,12 +105,46 @@
 
 }
 
-/* ========================= small mobile view ==========================*/
+/* ================================================================ small mobile view =====================================================*/
 
 @media (max-width: 575.98px) {
     .header-desktop {
         display: none;
     }
+
+    /* ======================= dark mode ===============================*/
+    .dark-mode {
+        background-color: #130D14;
+        color: white;
+        transition: all 500ms;
+    }
+
+    .dark-mode .header .header-mobile {
+        background-color: #130D14;
+        transition: all 500ms;
+    }
+
+    .dark-mode #nav-container {
+        background-color: #130D14;
+        transition: all 500ms;
+    }
+
+    .dark-mode .nav-items a {
+        color: white;
+        transition: all 500ms;
+    }
+
+    .dark-mode .toggle {
+        background-color: #130D14;
+        color: white;
+        transition: all 500ms;
+    }
+
+    .dark-mode .line {
+        stroke: white;
+    }
+
+    /* ======================= light mode ===============================*/
 
     .header-mobile {
         width: 100vw;
@@ -116,10 +152,10 @@
         display: flex;
         align-items: center;
         justify-content: space-around;
-        background-color: rgb(80, 151, 151);
+        background-color: #f6f6f6;
     }
 
-    #nav-container{
+    #nav-container {
         display: none;
         z-index: 100;
         position: fixed;
@@ -129,95 +165,53 @@
         transition: all 100ms;
     }
 
-    .nav-items{
+    .nav-items {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
 
+
+    .nav-items a {
+        margin-top: 10%;
+    }
+
     .hamburger {
         cursor: pointer;
-      }
-      
-      .hamburger input {
+    }
+
+    .hamburger input {
         display: none;
-      }
-      
-      .hamburger svg {
-        /* The size of the SVG defines the overall size */
+    }
+
+    .hamburger svg {
         height: 3em;
-        /* Define the transition for transforming the SVG */
         transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      
-      .line {
+    }
+
+    .line {
         fill: none;
-        stroke: white;
+        stroke: rgb(0, 0, 0);
         stroke-linecap: round;
         stroke-linejoin: round;
         stroke-width: 3;
-        /* Define the transition for transforming the Stroke */
         transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
-                    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      
-      .line-top-bottom {
+            stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .line-top-bottom {
         stroke-dasharray: 12 63;
-      }
-      
-      .hamburger input:checked + svg {
+    }
+
+    .hamburger input:checked+svg {
         transform: rotate(-45deg);
-      }
-      
-      .hamburger input:checked + svg .line-top-bottom {
+    }
+
+    .hamburger input:checked+svg .line-top-bottom {
         stroke-dasharray: 20 300;
         stroke-dashoffset: -32.42;
-      }
-      
-
-    .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
-
-    .toggle {
-        background-color: #f6f6f6;
-        width: 56px;
-        height: 56px;
-        border-radius: 50%;
-        display: grid;
-        place-items: center;
-        cursor: pointer;
-        line-height: 1;
-        color: black;
-    }
-
-    .input {
-        display: none;
-    }
-
-    .icon {
-        grid-column: 1 / 1;
-        grid-row: 1 / 1;
-        transition: transform 500ms;
-    }
-
-    .icon--sun {
-        transform: scale(0);
-    }
-
-    #switch:checked+.icon--moon {
-        transform: rotate(360deg) scale(0);
-    }
-
-    #switch:checked~.icon--sun {
-        transition-delay: 200ms;
-        transform: scale(1) rotate(360deg);
-    }
-
-
 }
 
 /* ========================= mobile view ==========================*/
@@ -230,6 +224,7 @@
     .header-mobile {
         width: 100vw;
         height: 100px;
+        position: fixed;
         display: flex;
         align-items: center;
         justify-content: space-around;
@@ -282,7 +277,6 @@
 
 /* ========================= tab view ==========================*/
 
-/* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
     .header-mobile {
         display: none;
