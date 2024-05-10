@@ -7,20 +7,20 @@
     letter-spacing: 1px;
 }
 
-.logo{
+.logo {
     background-image: url("../../assets/logoLightMode.PNG");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     mix-blend-mode: darken;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.dark-mode .logo{
+.dark-mode .logo {
     background-image: url("../../assets/logoDarkMode.PNG");
     mix-blend-mode: lighten;
 }
@@ -30,6 +30,7 @@
     justify-content: center;
     align-items: center;
 }
+
 .toggle {
     background-color: #f6f6f6;
     width: 56px;
@@ -41,7 +42,6 @@
     line-height: 1;
     color: black;
     transition: all 500ms;
-
 }
 
 .input {
@@ -129,15 +129,12 @@
         color: white;
         transition: all 500ms;
     }
-    
+
 
     /* ======================= light mode ===============================*/
-    .header .header-desktop {
+    .header-desktop {
         background-color: #f6f6f6;
         transition: all 500ms;
-    }
-
-    .header-desktop {
         position: fixed;
         min-width: 5vw;
         height: 100vh;
@@ -153,14 +150,14 @@
     }
 
     .container {
-        margin-top: -75%;
+        margin-top: -50%;
     }
 
     .header-mobile {
         display: none;
     }
 
-    .nav-items{
+    .nav-items {
         display: none;
     }
 
@@ -173,7 +170,7 @@
         display: none;
     }
 
-    #theme{
+    #theme {
         display: none;
     }
 
@@ -218,6 +215,7 @@
         justify-content: space-between;
         padding: 0 3%;
         background-color: #f6f6f6;
+        transition: all 500ms;
     }
 
     #nav-container {
@@ -241,8 +239,6 @@
     .nav-items a {
         margin-top: 10%;
     }
-
-
 }
 
 /* =================================================== mobile view ========================================================================*/
@@ -252,7 +248,7 @@
         display: none;
     }
 
-    #theme{
+    #theme {
         display: none;
     }
 
@@ -297,6 +293,7 @@
         align-items: center;
         justify-content: space-between;
         background-color: #f6f6f6;
+        transition: all 500ms;
     }
 
     #nav-container {
@@ -315,7 +312,6 @@
         justify-content: center;
         align-items: center;
     }
-
 
     .nav-items a {
         margin-top: 10%;
@@ -355,17 +351,10 @@
     }
 
     /* ======================= light mode ===============================*/
-    .header .header-desktop {
-        background-color: #f6f6f6;
-        transition: all 500ms;
-    }
-
-    .header a {
-        color: black;
-        transition: all 500ms;
-    }
 
     .header-desktop {
+        background-color: #f6f6f6;
+        transition: all 500ms;
         position: fixed;
         min-width: 5vw;
         height: 100vh;
@@ -384,7 +373,7 @@
     }
 
     .container {
-        margin-top: -75%;
+        margin-top: -50%;
     }
 
 
