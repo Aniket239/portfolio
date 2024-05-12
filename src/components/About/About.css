@@ -2,9 +2,10 @@
 @media (min-width: 768.98px) and (max-width: 2000px) {
 
 #about{
-    margin-left: 76px;
+    margin-left: 90px;
     width: 100vw;
     height: 100vh;
+    background-color: #cae1f4;
 }
 #about .mail-logo{
     width: 48px;
@@ -33,4 +34,10 @@
 /* ================================================================ tab view =============================================================*/
 
 @media (min-width: 768px) and (max-width: 991.98px) {
+    #about{
+        margin-left: 80px;
+        width: 100vw;
+        height: 100vh;
+        background-color: #cae1f4;
+    }
 }

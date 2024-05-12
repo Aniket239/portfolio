@@ -4,11 +4,8 @@ const About = () => {
   return (
     <section id="about">
       <div>
-        <h1>I'm Aniket Biswas</h1>
-          <a  href="mailto:aniketbiswas239@gmail.com">
-          <div className="mail-logo"></div>
-          </a>
-        </div>
+        <h1>test</h1>
+      </div>
       <div>
         <div></div>
         <div></div>
