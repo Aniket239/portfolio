@@ -28,17 +28,38 @@
         background: rgb(97, 144, 232);
         background: linear-gradient(180deg, rgba(97, 144, 232, 1) 0%, rgba(167, 191, 232, 1) 100%);
     }
+    
+    .about_logo{
+        background-image: url("../../assets/about_icon_light.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 35px;
+        height: 35px;
+        mix-blend-mode: darken;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .dark-mode .about_logo{
+        background-image: url("../../assets/about_icon_dark.png"); 
+        mix-blend-mode: lighten;  
+    }
 
     .about_container_about h1 {
         background-color: rgba(167, 191, 232, 1);
         height: 54px;
-        width: 127px;
+        width: 175px;
         border-bottom-right-radius: 2rem;
         border-top-left-radius: 2rem;
         margin: -5%;
         font-size: 1.6rem;
-        padding: 4% 7% 0 9%;
+        padding: 2% 4% 2%;
         color: black;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
     }
 
 
