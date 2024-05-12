@@ -2,7 +2,7 @@
   "short_name": "React Portfolio",
   "name": "Portfolio",
   "description": "My awesome portfolio showcasing my skills and projects.",
-  "start_url": "/",
+  "start_url": "https://aniket239.github.io/portfolio/",
   "lang": "en",
   
   "icons": [
