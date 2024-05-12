@@ -1,45 +1,74 @@
 /* ============================================================== Desktop view ===========================================================*/
 @media (min-width: 768.98px) and (max-width: 2000px) {
 
-    .dark-mode #about{
+    .dark-mode #about {
         background-color: #130D14;
         transition: all 500ms;
     }
-#about{
-    margin-left: 90px;
-    width: 100vw;
-    height: 100vh;
-    background-color: #f6f6f6;
-    transition: all 500ms;
-}
-#about .mail-logo{
-    width: 48px;
-    height: 48px;
-    background-image: url("https://img.icons8.com/pulsar-color/48/000000/mail.png");
-}
-.dark-mode #about .mail-logo{
-    width: 48px;
-    height: 48px;
-    background-image: url("https://img.icons8.com/pulsar-color/48/000000/mail.png");
-}
+
+    #about {
+        margin-left: 90px;
+        padding: 2%;
+        height: 80vh;
+        background-color: #f6f6f6;
+        transition: all 500ms;
+        display: flex;
+    }
+
+    .about_container{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .about_container_about {
+        padding: 2%;
+        width: 30vw;
+        height: 70vh;
+        border-radius: 2rem;
+        background: rgb(97,144,232);
+        background: linear-gradient(180deg, rgba(97,144,232,1) 0%, rgba(167,191,232,1) 100%);    }
+
+    .about_container_about h1{
+        background-color: rgba(167,191,232,1);
+        height: 54px;
+        width: 127px;
+        border-bottom-right-radius: 2rem;
+        border-top-left-radius: 2rem;
+        margin: -6.8%;
+        padding: 4% 7% 0 9%;
+        color: black;
+        }
+    .about_items{
+        margin-left: 2%;
+        border-radius: 2rem;
+        width: 61vw;
+        height: 76vh;
+        background-color: blue;
+    }
+
+    footer {
+        margin-left: 6.2vw;
+        width: 90vw;
+        padding: 1%;
+        border-radius: 1rem;
+        color: #130D14;
+        background-color: rgba(167,191,232,1);
+    }
 }
 
 
 /* ================================================================ small mobile view =====================================================*/
 
-@media (max-width: 575.98px) {
-
-}
+@media (max-width: 575.98px) {}
 
 /* =================================================== mobile view ========================================================================*/
 
-@media (min-width: 576px) and (max-width: 767.98px) {
-}
+@media (min-width: 576px) and (max-width: 767.98px) {}
 
 /* ================================================================ tab view =============================================================*/
 
 @media (min-width: 768px) and (max-width: 991.98px) {
-    #about{
+    #about {
         margin-left: 80px;
         width: 100vw;
         height: 100vh;
