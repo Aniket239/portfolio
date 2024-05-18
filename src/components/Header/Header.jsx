@@ -69,10 +69,12 @@ const Header = () =>{
     <div className="header">
     <header className="header-desktop">
       <div className="logo"></div>
+      <div className="header_items">
       <Link to="/portfolio">About</Link>
       <Link to="/projects">Projects</Link>
       <Link to="/contacts">Contact</Link>
       {windowWidth  > 767 ? theme() : null}
+      </div>
     </header>
     
     <header className="header-mobile">

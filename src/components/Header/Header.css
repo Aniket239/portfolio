@@ -117,6 +117,7 @@
     .dark-mode .header .header-desktop {
         background-color: #130D14;
         transition: all 500ms;
+        border-bottom: 4px solid #f6f6f6;
     }
 
     .dark-mode .header a {
@@ -133,24 +134,27 @@
 
     /* ======================= light mode ===============================*/
     .header-desktop {
+        position: fixed;
         background-color: #f6f6f6;
         transition: all 500ms;
-        position: fixed;
-        width: 90px;
-        height: 100vh;
+        width: 94vw;
+        height: 90px;
         z-index: 100;
+        padding: 0 3%;
+        top: 0;
         display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
+        border-bottom: 4px solid #130D14;
     }
 
-    .header-desktop a {
-        rotate: 270deg;
-    }
-
-    .container {
-        margin-top: -50%;
+    .header_items{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 40vw;
     }
 
     .header-mobile {
@@ -209,7 +213,7 @@
     /* ======================= light mode ===============================*/
 
     .header-mobile {
-        height: 100px;
+        height: 90px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -287,7 +291,7 @@
     /* ======================= light mode ===============================*/
 
     .header-mobile {
-        height: 100px;
+        height: 90px;
         padding: 0 3%;
         display: flex;
         align-items: center;
@@ -355,25 +359,22 @@
     .header-desktop {
         background-color: #f6f6f6;
         transition: all 500ms;
-        position: fixed;
-        width: 80px;
-        height: 100vh;
+        width: 94vw;
+        height: 90px;
         z-index: 100;
+        padding: 0 30px;
         display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    .header-desktop a {
-        rotate: 270deg;
-        text-decoration: none;
-        font-size: large;
-        font-weight: bold;
-        letter-spacing: 1px;
-    }
-
-    .container {
-        margin-top: -50%;
+    .header_items{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 40vw;
     }
 
 
