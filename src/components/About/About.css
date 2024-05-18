@@ -6,15 +6,51 @@
         transition: all 500ms;
     }
 
+    .dark-mode .about_info span{
+        color: #ffde59;
+        transition: all 500ms;
+    }
+
     #about {
         margin-top: 90px;
         padding: 2%;
+        width: 100vw;
         height: 80vh;
         background-color: #f6f6f6;
         transition: all 500ms;
         display: flex;
     }
-    
+    .about_container{
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .about_container .about_info{
+        width: 60vw;
+    }
+    .about_info h1{
+        font-size: 40px;
+    } 
+    .about_info span{
+        color: #192846;
+        transition: all 500ms;
+    }
+
+    .about_info a{
+        text-decoration: none;
+        color: black;
+        font-size: larger;
+        font-weight: bold;
+        padding: 6px 24px 12px;
+        background-color: greenyellow;
+        border-radius: 20px;
+    }
+
+    .about_image{
+        width: 40vw;
+    }
 
 }
 
@@ -26,18 +62,7 @@
 /* =================================================== mobile view ========================================================================*/
 
 @media (min-width: 576px) and (max-width: 767.98px) {}
-    #about > div {
-        flex-direction: column;
-    }
 
-    #about > div > div:first-child, 
-    #about > div > div:last-child {
-        padding: 20px;
-    }
-
-    #about img {
-        max-width: 80%;
-    }
 /* ================================================================ tab view =============================================================*/
 
 @media (min-width: 768px) and (max-width: 991.98px) {
